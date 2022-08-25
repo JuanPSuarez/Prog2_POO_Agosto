@@ -1,10 +1,9 @@
 # Prog2_POO_Agosto
 
-## Programación II – Docente: Aperlo, Ma. Agustina 
+## ISAUI - Programación II – Docente: Aperlo, Ma. Agustina 
 
 ### Alumno: Suarez, Juan Pablo
 
-3 Ejercicios de practica de POO.
 
 **Ejercicio 1**
 
