@@ -1,4 +1,4 @@
-class persona:
+class Persona:
     def __init__(self):
 #Nombre
         self.nombre = input("Ingrese el nombre: ")
@@ -24,6 +24,8 @@ class persona:
 #MayorEdad
         self.Mayor = bool
         
+
+
 
 #getters
     # @property
@@ -66,6 +68,6 @@ class persona:
             self.Mayor = False 
             print("La persona no es mayor de edad.")
 
-persona1 = persona()
+persona1 = Persona()
 persona1.mostrarPersona()
 persona1.esMayorDeEdad()
