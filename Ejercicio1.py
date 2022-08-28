@@ -59,7 +59,6 @@ class Persona:
         )
 
 # Metodo esMayorDeEdad()
-
     def esMayorDeEdad(self):
         if self.edad >= 18:
             self.Mayor = True
