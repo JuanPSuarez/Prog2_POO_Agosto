@@ -1,6 +1,6 @@
 class Cuenta:
-    def __init__(self, titular):
-        self.titular = titular
+    def __init__(self):
+        self.titular = input ("Ingrese el titular: ")
         self.cantidadIngreso = int
 
 
@@ -52,10 +52,7 @@ class Cuenta:
         return self.cantidadIngreso
         
 
-titular = input ("Ingrese el titular: ")
 
 
-Fulano = Cuenta(titular)
-Fulano.ingresarCuenta()
-Fulano.retirarCuenta()
-Fulano.mostrarDatos()
+
+Fulano = Cuenta
