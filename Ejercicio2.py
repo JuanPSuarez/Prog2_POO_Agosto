@@ -1,7 +1,7 @@
 class Cuenta:
-    def __init__(self, titular, cantidadIngreso):
+    def __init__(self, titular):
         self.titular = titular
-        self.cantidadIngreso = cantidadIngreso
+        self.cantidadIngreso = int
 
 
 # #getters
@@ -26,25 +26,36 @@ class Cuenta:
 #         return self._cantidadIngreso == value
 
 
-#Metodo mostrarDatos()
+#Metodo mostrar datos de la cuenta.
 
     def mostrarDatos(self):
         print("El titular es:" , self.titular, "\nEl dinero disponible en la cuenta es: $"+ str(self.cantidadIngreso))
         return self.titular, self.cantidadIngreso
 
-#Metodo ingresarCuenta()
+#Metodo ingresar fondos a la cuenta.
 
     def ingresarCuenta(self):
-        return
+        self.cantidadIngreso = input("Ingrese el monto a cargar en la cuenta: $")
+        return self.cantidadIngreso
 
-#Metodo retirarCuenta()
+#Metodo retirar monto de la cuenta.
     def retirarCuenta(self):
-        return
+        Opcion=int(input("¿Desea retirar dinero de la cuenta? \n 1-Si \n 2- No \n"))
+        totalRetiro = 0
+        while Opcion != 2:
+            cantidadRetiro = int(input("Ingrese la cantidad a retirar: $"))
+            Opcion = int(input("¿Seguir retirando dinero? \n1-Si \n 2-No\n"))
+            self.cantidadIngreso = int(self.cantidadIngreso) - cantidadRetiro
+            totalRetiro += cantidadRetiro
+        print("Se ha retirado: $"+ str(totalRetiro), "\nDinero disponible: $"+ str(self.cantidadIngreso))
+
+        return self.cantidadIngreso
         
 
 titular = input ("Ingrese el titular: ")
-cantidadIngreso = input("Ingrese el monto a cargar en la cuenta: ")
 
 
-Fulano = Cuenta(titular, cantidadIngreso)
-Fulano.mostrar()
+Fulano = Cuenta(titular)
+Fulano.ingresarCuenta()
+Fulano.retirarCuenta()
+Fulano.mostrarDatos()
