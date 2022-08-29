@@ -1,6 +1,6 @@
 class Cuenta:
     def __init__(self):
-        self.titular = input ("Ingrese el titular: ")
+        self.titular = str(input("Ingrese el titular: "))
         self.cantidadIngreso = int
 
 
@@ -53,6 +53,7 @@ class Cuenta:
         
 
 
-
-
-Fulano = Cuenta
+# Fulano = Cuenta()
+# Fulano.ingresarCuenta()
+# Fulano.mostrarDatos()
+# Fulano.retirarCuenta()
