@@ -1,7 +1,17 @@
+from Ejercicio1 import Persona
 class Cuenta():
-    def __init__(self, titular, cant):
-        self.titular = titular
-        self.cantidadIngreso = cant
+    def __init__(self): 
+
+        self.titular = input("Ingrese del titular: ")
+        
+        while len(self.titular) < 2 or any(char.isdigit() for char in self.titular) or len(self.titular) > 30: 
+            #Verificacion longitud y letras. Tiene que tener minimo 2 caracteres, maximo 30. Solo letras, no numeros.
+            self.titular = input("Ingreso un nombre inválido. Ingrese el nombre nuevamente: ")
+
+        self.cantidadIngreso = input("Ingrese el monto de la cuenta: $")
+        while self.cantidadIngreso.isnumeric() == False:  #Verificacion de si es numero.
+            self.cantidadIngreso = input("Ingreso a la cuenta con caracteres incorrectos. Ingrese numeros unicamente: $")
+        self.cantidadIngreso = int(self.cantidadIngreso) #Se convierte a int    
 
 
 # #getters
@@ -52,9 +62,25 @@ class Cuenta():
         return self.cantidadIngreso
         
 
-titular = input("Ingrese el nombre del titular: ")
 cant = 0
-Fulano = Cuenta(titular, cant)
+Fulano = Cuenta()
 Fulano.ingresarCuenta()
 Fulano.mostrarDatos()
 Fulano.retirarCuenta()
+
+
+        # self.DNI = input("Ingrese el DNI: ")
+        # while len(self.DNI) not in range (6, 9) or any(num.isalpha() for num in self.DNI): #La longitud de DNI debe ser entre el rango de 6 y 8.
+        #     self.DNI = (input("DNI Incorrecto. Ingrese solo numeros. 6 a 8 caracteres. Agregar '0' si es necesario:  "))
+        # self.DNI = int(self.DNI) #Se asigna el DNI de string a numeros.
+
+
+        # self.edad = input("Ingrese la edad: ")
+        # while self.edad.isnumeric() == False:  #Verificacion de si es numero.
+        #     self.edad = input("Ingreso una edad con caracteres incorrectos. Ingrese una edad con numeros unicamente: ")
+        
+        # self.edad = int(self.edad) #Se convierte a int      
+        # while self.edad < 1 or self.edad > 150: #Se verifica si esta dentro del rango 1 a 150 años.
+        #     self.edad = int(input("Edad fuera de rango. Ingrese una edad entre 1 a 150 años:  "))
+
+

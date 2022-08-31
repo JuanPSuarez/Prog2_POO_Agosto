@@ -1,9 +1,18 @@
 from Ejercicio2 import Cuenta
 class CuentaJoven(Cuenta):
 
-    def __init__(self, titular, cantidad, bonificacion, edad):
-        super().__init__(titular, cantidad)
-        self.edad (edad)
+    def __init__(self, bonificacion):
+        super().__init__(self)
+        
+        self.edad = input("Ingrese la edad: ")
+        while self.edad.isnumeric() == False:  #Verificacion de si es numero.
+            self.edad = input("Ingreso una edad con caracteres incorrectos. Ingrese una edad con numeros unicamente: ")
+        
+        self.bonificacion = input("Ingrese el monto de la cuenta: $")
+        while self.bonificacion.isnumeric() == False:  #Verificacion de si es numero.
+            self.bonificacion = input("Ingreso de bonificacion con caracteres incorrectos. Ingrese numeros unicamente: $")
+        self.bonificacion = int(self.bonificacion) #Se convierte a int  
+
         self.bonificacion (bonificacion)
 
     def __init__(self):
@@ -30,21 +39,17 @@ class CuentaJoven(Cuenta):
 #Retirar cuenta, cuenta joven, heredado de clase padre Cuenta
     def retirarCuentaJoven(self):
         if self.titularVal == True:
+            print ("Retiro: El titular tiene una edad compatible con la Cuenta Joven.")
             return super().retirarCuenta()
         else:
             print ("Retiro: El titular no tiene una edad compatible con la Cuenta Joven.")
         return None
 
 
-titular = input("Ingrese el nombre del titular: ")
-cantidad = 0
-bonificacion = input("Ingrese el % de bonifiacion: ")
-edad = int(input("Ingrese la edad del titular: "))
 
 
 
 
-Mengano = CuentaJoven(titular, cantidad, bonificacion, edad)
 
 Mengano = CuentaJoven()
 Mengano.esTitularValido()
